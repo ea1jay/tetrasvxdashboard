@@ -7,13 +7,13 @@
     <meta name="language" content="English" />
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <meta name="Author" content="Iñigo Bastarrika (EA2CQ)" />
-    <meta name="Description" content="Tetra SVXLink Configuration Editor" />
+    <meta name="Description" content="Tetra Dash Config Editor" />
     <meta name="KeyWords" content="Tetra" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="pragma" content="no-cache" />
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <meta http-equiv="Expires" content="0" />
-    <title>Tetra SVXLink Editor</title>
+    <title>Tetra Dashboard Config Editor</title>
 
   </head>
   <body>
@@ -21,35 +21,34 @@
   <div class="container">
   <div class="contentwide">
   <?php
+  include "config/config.php";
 if(isset($_POST['data'])) {
         // File Wrangling
-        exec('sudo cp /etc/svxlink/svxlink.conf /tmp/fmehg65694eg.tmp');
-        exec('sudo chown svxlink:svxlink /tmp/fmehg65694eg.tmp');
-        exec('sudo chmod 664 /tmp/fmehg65694eg.tmp');
+        exec('sudo cp ' . DASHCONFIG . ' /tmp/fmehg65694eh.tmp');
+        exec('sudo chown svxlink:svxlink /tmp/fmehg65694eh.tmp');
+        exec('sudo chmod 664 /tmp/fmehg65694eh.tmp');
 
         // Open the file and write the data
-        $filepath = '/tmp/fmehg65694eg.tmp';
+        $filepath = '/tmp/fmehg65694eh.tmp';
         $fh = fopen($filepath, 'w');
         fwrite($fh, $_POST['data']);
         fclose($fh);
-        exec('sudo cp /tmp/fmehg65694eg.tmp /etc/svxlink/svxlink.conf');
-        exec('sudo chmod 644 /etc/svxlink/svxlink.conf');
-        exec('sudo chown pi:pi /etc/svxlink.conf');
+        exec('sudo cp /tmp/fmehg65694eh.tmp ' . DASHCONFIG);
+        exec('sudo chmod 644 ' . DASHCONFIG);
+        exec('sudo chown root:root' . DASHCONFIG);
 
-        // Reload the affected daemon
-        exec('sudo systemctl restart svxlink.service');             // Reload the daemon
         // Re-open the file and read it
         $fh = fopen($filepath, 'r');
         $theData = fread($fh, filesize($filepath));
-        echo '<p style="color: red; text-align: center">Config files has been modified and svxlink.service restarted!</p>';
+        echo '<p style="color: red; text-align: center">Dash Config file has been modified!</p>';
 } else {
         // File Wrangling
-        exec('sudo cp /etc/svxlink/svxlink.conf /tmp/fmehg65694eg.tmp');
-        exec('sudo chown svxlink:svxklink /tmp/fmehg65694eg.tmp');
-        exec('sudo chmod 664 /tmp/fmehg65694eg.tmp');
+        exec('sudo cp ' . DASHCONFIG . ' /tmp/fmehg65694eh.tmp');
+        exec('sudo chown svxlink:svxklink /tmp/fmehg65694eh.tmp');
+        exec('sudo chmod 664 /tmp/fmehg65694eh.tmp');
 
         // Open the file and read it
-        $filepath = '/tmp/fmehg65694eg.tmp';
+        $filepath = '/tmp/fmehg65694eh.tmp';
         $fh = fopen($filepath, 'r');
         $theData = fread($fh, filesize($filepath));
 }
