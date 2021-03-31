@@ -55,6 +55,7 @@ function getSvxTXLines() {
 	return $logLines;
 }
 
+
 function getLHLines() {
 	$logLines = array();
         // returns the SvxLink Last Heard log lines
@@ -74,6 +75,13 @@ function getDefaultTG($config) {
         // returns the default TG  at svxlink.conf
         $confPath = SVXCONFPATH."/".SVXCONFFILENAME;
         $configLine = `egrep -h "DEFAULT_TG" $confPath | tail -1`;
+        return $configLine;
+}
+
+function getMonitorTGs($config) {
+        // returns Monitor TGs  at svxlink.conf
+        $confPath = SVXCONFPATH."/".SVXCONFFILENAME;
+        $configLine = `egrep -h "MONITOR_TGS" $confPath | tail -1`;
         return $configLine;
 }
 
@@ -134,6 +142,7 @@ function getActiveModules($logLines) {
 			$modul = substr($lineParts[5],0,-4);
 			$modules[$modul] = 'Off';
                 }
+
         }
         return $modules;
 }
