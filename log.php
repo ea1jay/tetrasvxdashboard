@@ -50,7 +50,11 @@ include "version.php";
           <li class="nav-item">
             <a class="nav-link" href="#">Log</a>
           </li>
-     <li class="nav-item">
+            <li class="nav-item">
+            <a class="nav-link" href="editdash.php">Edit Dash Config</a>
+          </li>
+
+           <li class="nav-item">
             <a class="nav-link" href="editconfig.php">Edit SVX Config</a>
           </li>
           <li class="nav-item">
