@@ -23,5 +23,5 @@ define("KEY5", array('TG204','91204#'));
 define("KEY6", array('TG208','91208#'));
 define("KEY7", array('TG222','91222#'));
 define("KEY8", array('METAR','D61010#'));
-define("DASHCONFIG", "/var/www/html/tetrasvxdash/config/config.php");
+define("DASHCONFIG", "/var/www/html/tetrasvxdashboard/config/config.php");
 ?>
