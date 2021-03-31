@@ -16,6 +16,8 @@ Estas instrucciones han sido generadas para instalar el Dashboard sobre instalac
 
 2. Modificar usuario de Apache2
 
+`sudo nano /etc/apache2/envvars`
+
 Modificar las lineas:
 ```
 export APACHE_RUN_USER=www-data
@@ -110,6 +112,8 @@ These instructions have been generated to install the Dashboard on a working TET
 `sudo apt -y install php php-common apache2`
 
 2. Modify Apache2's user
+
+`sudo nano /etc/apache2/envvars`
 
 Change the following lines:
 ```
