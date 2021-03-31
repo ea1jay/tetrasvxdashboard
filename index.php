@@ -106,6 +106,9 @@ include "version.php";
           <li class="nav-item">
             <a class="nav-link" href="log.php">Log</a>
           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="editdash.php">Edit Dash Config</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="editconfig.php">Edit SVX Config</a>
           </li>
@@ -148,143 +151,145 @@ include "version.php";
       </div>
     </div>
   </div>
-<?php
+
+
+ <?php
         if(array_key_exists('button1', $_POST)) {
             button1();
         }
         if(array_key_exists('button2', $_POST)) {
             button2();
         }
-   if(array_key_exists('button3', $_POST)) {
+         if(array_key_exists('button3', $_POST)) {
             button3();
         }
-   if(array_key_exists('button4', $_POST)) {
+         if(array_key_exists('button4', $_POST)) {
             button4();
         }
-   if(array_key_exists('button5', $_POST)) {
+         if(array_key_exists('button5', $_POST)) {
             button5();
         }
-   if(array_key_exists('button6', $_POST)) {
+         if(array_key_exists('button6', $_POST)) {
             button6();
         }
-   if(array_key_exists('button7', $_POST)) {
+         if(array_key_exists('button7', $_POST)) {
             button7();
         }
-   if(array_key_exists('button8', $_POST)) {
+         if(array_key_exists('button8', $_POST)) {
             button8();
         }
-   if(array_key_exists('button9', $_POST)) {
+         if(array_key_exists('button9', $_POST)) {
             button9();
         }
-   if(array_key_exists('button10', $_POST)) {
+         if(array_key_exists('button10', $_POST)) {
             button10();
         }
         if(array_key_exists('button11', $_POST)) {
             button11();
         }
-  if(array_key_exists('button12', $_POST)) {
+        if(array_key_exists('button12', $_POST)) {
             button12();
         }
-  
+
         function button1() {
             $exec= "echo '" . KEY1[1] . "' > /tmp/svxlink_dtmf";
             exec($exec,$output);
             echo "<meta http-equiv='refresh' content='0'>";
         }
         function button2() {
-      $exec= "echo '" . KEY2[1] . "' > /tmp/svxlink_dtmf";
+            $exec= "echo '" . KEY2[1] . "' > /tmp/svxlink_dtmf";
             exec($exec,$output);
             echo "<meta http-equiv='refresh' content='0'>";
         }
-  function button3() {
-      $exec= "echo '" . KEY3[1] . "' > /tmp/svxlink_dtmf";        
+        function button3() {
+            $exec= "echo '" . KEY3[1] . "' > /tmp/svxlink_dtmf";
             exec($exec,$output);
             echo "<meta http-equiv='refresh' content='0'>";
         }
-  function button4() {
+        function button4() {
         $exec= "echo '" . KEY4[1] . "' > /tmp/svxlink_dtmf";
             exec($exec,$output);
             echo "<meta http-equiv='refresh' content='0'>";
         }
-  function button5() {
-  $exec= "echo '" . KEY5[1] . "' > /tmp/svxlink_dtmf";
+        function button5() {
+        $exec= "echo '" . KEY5[1] . "' > /tmp/svxlink_dtmf";
             exec($exec,$output);
             echo "<meta http-equiv='refresh' content='0'>";
         }
-  function button6() {
-      $exec= "echo '" . KEY6[1] . "' > /tmp/svxlink_dtmf";
+        function button6() {
+            $exec= "echo '" . KEY6[1] . "' > /tmp/svxlink_dtmf";
             exec($exec,$output);
             echo "<meta http-equiv='refresh' content='0'>";
         }
-  function button7() {
-        $exec= "echo '" . KEY7[1] . "' > /tmp/svxlink_dtmf";
+        function button7() {
+            $exec= "echo '" . KEY7[1] . "' > /tmp/svxlink_dtmf";
             exec($exec,$output);
             echo "<meta http-equiv='refresh' content='0'>";
         }
-  function button8() {
-        $exec= "echo 'D61010#' > /tmp/svxlink_dtmf";
+        function button8() {
+            $exec= "echo '" . KEY8[1] . "' > /tmp/svxlink_dtmf";
             exec($exec,$output);
             echo "<meta http-equiv='refresh' content='0'>";
         }
-  function button9() {
+        function button9() {
         $exec= "echo 'D61004#' > /tmp/svxlink_dtmf";
             exec($exec,$output);
             echo "<meta http-equiv='refresh' content='0'>";
         }
-  function button10() {
+        function button10() {
         $exec= "echo 'D61005#' > /tmp/svxlink_dtmf";
             exec($exec,$output);
             echo "<meta http-equiv='refresh' content='0'>";
         }
-  function button11() {
+        function button11() {
         $exec= "sudo service svxlink stop";
             exec($exec,$output);
-  echo "REPEATER STOPPED !!!";
+        echo "REPEATER STOPPED !!!";
         }
-  function button12() {
+        function button12() {
         $exec= "sudo service svxlink start";
             exec($exec,$output);
         echo "REPEATER STARTED !!!";
         }
 
-  
+
     ?>
-<br>
+    <br>
     <td><b><center>CONTROL BOARD</center></b></td>
     <br>
     <form method="post">
-  <center>
+        <center>
         <input type="submit" name="button1"
                 class="buttonazul" value=<?php echo KEY1[0] ?> />
         <input type="submit" name="button2"
-    class="buttonazul" value=<?php echo KEY2[0] ?> />
+                class="buttonazul" value=<?php echo KEY2[0] ?> />
         <input type="submit" name="button3"
-    class="buttonazul" value=<?php echo KEY3[0] ?> />
-  <input type="submit" name="button4"
-    class="buttonazul" value=<?php echo KEY4[0] ?> />
-  <input type="submit" name="button5"
-    class="buttonazul" value=<?php echo KEY5[0] ?> />
+                class="buttonazul" value=<?php echo KEY3[0] ?> />
+        <input type="submit" name="button4"
+                class="buttonazul" value=<?php echo KEY4[0] ?> />
+        <input type="submit" name="button5"
+                class="buttonazul" value=<?php echo KEY5[0] ?> />
         <input type="submit" name="button6"
-    class="buttonazul" value=<?php echo KEY6[0] ?> />
-  <input type="submit" name="button7"
-    class="buttonazul" value=<?php echo KEY7[0] ?> />
-  <input type="submit" name="button8"
-                class="buttonverde" value="METAR"/>
-  <input type="submit" name="button9"
+                class="buttonazul" value=<?php echo KEY6[0] ?> />
+        <input type="submit" name="button7"
+                class="buttonazul" value=<?php echo KEY7[0] ?> />
+        <input type="submit" name="button8"
+                class="buttonverde" value=<?php echo KEY8[0] ?> />
+        <input type="submit" name="button9"
                 class="buttonverde" value="PARROT ON" />
-  <input type="submit" name="button10"
-                class="buttonverde" value="PARROT OFF" /><br>
-   <input type="submit" name="button11"
+        <input type="submit" name="button10"
+                class="buttonverde" value="PARROT OFF" /><br><br>
+         <input type="submit" name="button11"
                 class="buttonrojo" value="REPE STOP" />
-  <input type="submit" name="button12"
+        <input type="submit" name="button12"
                 class="buttonrojo" value="REPE START" /><br>
 
-  </center>
+        </center>
     </form>
 
 <form action="" method="POST">
   <center>
-  <br><label for="mydtmf">Send DTMF command (must end with #):</label>  
+  <br><label for="mydtmf">Send DTMF command (must end with #):</label>
   <input type="text" id="mydtmf" name="mydtmf">
   <input type="submit" class="buttonnegro"><br>
   </center>
@@ -296,7 +301,7 @@ include "version.php";
    $exec= "echo '" . $_POST['mydtmf'] . "' > /tmp/svxlink_dtmf";
    exec($exec,$output);
    echo "<meta http-equiv='refresh' content='0'>";
-  
+
 }?>
 
  <footer class="footer-copyright">
