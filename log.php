@@ -81,7 +81,7 @@ include "version.php";
           <?php
             $lastReload = new DateTime();
             $lastReload->setTimezone(new DateTimeZone(TIMEZONE));
-              echo "Tetra Dashboard v.1.0 | Last Reload ".$lastReload->format('Y-m-d, H:i:s')." (".TIMEZONE.")";
+              echo "Tetra Dashboard ".VERSION." | Last Reload ".$lastReload->format('Y-m-d, H:i:s')." (".TIMEZONE.")";
             $time = microtime();
             $time = explode(' ', $time);
             $time = $time[1] + $time[0];
