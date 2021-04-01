@@ -64,6 +64,21 @@ function getLHLines() {
         return $logLines;
 }
 
+function getBootLines() {
+        // returns the SvxLink Boot log line
+        $logPath = SVXLOGPATH."/".SVXLOGPREFIX;
+        $logLines = `egrep -h "Tobias" $logPath | tail -1`;
+        return $logLines;
+}
+
+function getStopLines() {
+        // returns the SvxLink stop log line
+        $logPath = SVXLOGPATH."/".SVXLOGPREFIX;
+        $logLines = `egrep -h "Shutting" $logPath | tail -1`;
+        return $logLines;
+}
+
+
 function getSvxTGLines($logLines) {
         // returns the SvxLink TG log lines
         $logPath = SVXLOGPATH."/".SVXLOGPREFIX;
@@ -153,6 +168,16 @@ function getCurrentTG($logLines) {
         $tg = substr($tgParts[5],0);
         $dtg=getDefaultTG($config);
         return $tg;
+}
+
+function getBoot($logLines) {
+        $lineaboot = getBootLines($logLines);
+        return $lineaboot;
+}
+
+function getStop($logLines) {
+        $lineastop = getStopLines($logLines);
+        return $lineastop;
 }
 
 
