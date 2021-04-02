@@ -47,7 +47,7 @@ Una vez hecho el cambio, reiniciar: `sudo reboot`
 
 4. Habilitar en la configuración del SVXLink el uso de comandos remotos por puerto serie virtual
 
-`sudo nano /etc/opt/svxlink/svxlink.conf`
+`sudo nano /etc/svxlink/svxlink.conf`
 
 A continuación de estas líneas
 ```
@@ -144,7 +144,7 @@ Once done, reboot: `sudo reboot`
 
 4. Enable in SVXlink config the option of remote commands by the virtual serial port
 
-`sudo nano /etc/opt/svxlink/svxlink.conf`
+`sudo nano /etc/svxlink/svxlink.conf`
 
 Next to these lines
 ```
