@@ -26,5 +26,5 @@ define("KEY7", array('TG262','91262#','blue'));
 define("KEY8", array('METAR','D61010#','green'));
 define("KEY9", array('PARROT ON','D61004#','green'));
 define("KEY10", array('PARROT OFF','D61005#','green'));
-define("DASHCONFIG", "/var/www/html/tetrasvxdashboard/config/config.php");
+define("DASHCONFIG", "/var/www/html/config/config.php");
 ?>
